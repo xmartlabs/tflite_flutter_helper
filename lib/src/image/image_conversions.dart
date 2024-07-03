@@ -44,8 +44,10 @@ class ImageConversions {
     final grayscale = ColorSpaceType.GRAYSCALE;
     grayscale.assertShape(shape);
 
-    final image = img.Image.fromBytes(width:grayscale.getWidth(shape),
-        height:grayscale.getHeight(shape), bytes: uint8Buffer.getBuffer(),
+    final image = img.Image.fromBytes(
+        width: grayscale.getWidth(shape),
+        height: grayscale.getHeight(shape),
+        bytes: uint8Buffer.getBuffer(),
         format: img.Format.uint8);
 
     return image;
@@ -54,13 +56,15 @@ class ImageConversions {
   static void convertImageToTensorBuffer(img.Image image, TensorBuffer buffer) {
     int w = image.width;
     int h = image.height;
-    List<img.Pixel>? pixels = image.data?.toList();
+    List<img.PixelUint8> pixels = image.data!
+        .map((pixel) => img.PixelUint8.from(pixel as img.PixelUint8))
+        .toList();
     int flatSize = w * h * 3;
     List<int> shape = [h, w, 3];
     switch (buffer.getDataType()) {
       case TensorType.uint8:
         List<int> byteArr = List.filled(flatSize, 0);
-        for (int i = 0, j = 0; i < pixels!.length; i++) {
+        for (int i = 0, j = 0; i < (w * h); i++) {
           byteArr[j++] = pixels[i].r.toInt();
           byteArr[j++] = pixels[i].g.toInt();
           byteArr[j++] = pixels[i].b.toInt();
@@ -69,10 +73,10 @@ class ImageConversions {
         break;
       case TensorType.float32:
         List<double> floatArr = List.filled(flatSize, 0.0);
-        for (int i = 0, j = 0; i < pixels!.length; i++) {
+        for (int i = 0, j = 0; i < (w * h); i++) {
           floatArr[j++] = pixels[i].r.toDouble();
-          floatArr[j++] = pixels[i].r.toDouble();
-          floatArr[j++] = pixels[i].r.toDouble();
+          floatArr[j++] = pixels[i].g.toDouble();
+          floatArr[j++] = pixels[i].b.toDouble();
         }
         buffer.loadList(floatArr, shape: shape);
         break;
