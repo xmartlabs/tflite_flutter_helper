@@ -39,14 +39,14 @@ enum class SoundStreamStatus {
 
 const val METHOD_CHANNEL_NAME = "com.xmartlabs.tflite_flutter_helper:methods"
 
-/** TfliteFlutterProcessingPlugin */
-class TfliteFlutterProcessingPlugin : FlutterPlugin,
+/** TfliteFlutterHelperPlugin */
+class TfliteFlutterHelperPlugin : FlutterPlugin,
 		MethodCallHandler,
 		PluginRegistry.RequestPermissionsResultListener,
 		ActivityAware {
 
 
-	private val LOG_TAG = "TfliteFlutterProcessingPlugin"
+	private val LOG_TAG = "TfliteFlutterHelperPlugin"
 	private val AUDIO_RECORD_PERMISSION_CODE = 14887
 	private val DEFAULT_SAMPLE_RATE = 16000
 	private val DEFAULT_BUFFER_SIZE = 8192

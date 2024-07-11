@@ -1,10 +1,10 @@
 import Flutter
 import UIKit
 
-public class SwiftTfliteFlutterProcessingPlugin: NSObject, FlutterPlugin {
+public class SwiftTfliteFlutterHelperPlugin: NSObject, FlutterPlugin {
   public static func register(with registrar: FlutterPluginRegistrar) {
     let channel = FlutterMethodChannel(name: "tflite_flutter_helper", binaryMessenger: registrar.messenger())
-    let instance = SwiftTfliteFlutterProcessingPlugin()
+    let instance = SwiftTfliteFlutterHelperPlugin()
     registrar.addMethodCallDelegate(instance, channel: channel)
   }
 

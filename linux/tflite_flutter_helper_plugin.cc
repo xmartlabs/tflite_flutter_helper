@@ -6,7 +6,7 @@
 
 #include <cstring>
 
-#define TFLITE_FLUTTER_PROCESSING_PLUGIN(obj) \
+#define TFLITE_FLUTTER_HELPER_PLUGIN(obj) \
   (G_TYPE_CHECK_INSTANCE_CAST((obj), tflite_flutter_helper_plugin_get_type(), \
                               TfliteFlutterHelperPlugin))
 
@@ -49,12 +49,12 @@ static void tflite_flutter_helper_plugin_init(TfliteFlutterHelperPlugin* self) {
 
 static void method_call_cb(FlMethodChannel* channel, FlMethodCall* method_call,
                            gpointer user_data) {
-  TfliteFlutterHelperPlugin* plugin = TFLITE_FLUTTER_PROCESSING_PLUGIN(user_data);
+  TfliteFlutterHelperPlugin* plugin = TFLITE_FLUTTER_HELPER_PLUGIN(user_data);
   tflite_flutter_helper_plugin_handle_method_call(plugin, method_call);
 }
 
 void tflite_flutter_helper_plugin_register_with_registrar(FlPluginRegistrar* registrar) {
-  TfliteFlutterHelperPlugin* plugin = TFLITE_FLUTTER_PROCESSING_PLUGIN(
+  TfliteFlutterHelperPlugin* plugin = TFLITE_FLUTTER_HELPER_PLUGIN(
       g_object_new(tflite_flutter_helper_plugin_get_type(), nullptr));
 
   g_autoptr(FlStandardMethodCodec) codec = fl_standard_method_codec_new();
