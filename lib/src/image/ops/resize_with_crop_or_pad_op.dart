@@ -1,9 +1,9 @@
 import 'dart:math' show Point;
 import 'package:image/image.dart' show Image, drawPixel;
 import 'dart:math';
-import 'package:tflite_flutter_processing/src/image/image_operator.dart';
-import 'package:tflite_flutter_processing/src/image/ops/resize_op.dart';
-import 'package:tflite_flutter_processing/src/image/tensor_image.dart';
+import 'package:tflite_flutter_helper/src/image/image_operator.dart';
+import 'package:tflite_flutter_helper/src/image/ops/resize_op.dart';
+import 'package:tflite_flutter_helper/src/image/tensor_image.dart';
 import 'package:tuple/tuple.dart';
 
 /// As a computation unit for processing images, it could resize image to predefined size.

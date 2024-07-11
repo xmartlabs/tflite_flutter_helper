@@ -4,7 +4,7 @@ import 'package:audio_classification/main.dart';
 import 'package:flutter/services.dart';
 import 'package:collection/collection.dart';
 import 'package:tflite_flutter/tflite_flutter.dart';
-import 'package:tflite_flutter_processing/tflite_flutter_processing.dart';
+import 'package:tflite_flutter_helper/tflite_flutter_helper.dart';
 
 class Classifier {
   late Interpreter interpreter;
@@ -84,7 +84,9 @@ List<Category> getTopProbability(Map<String, double> labeledProb) {
   var pq = PriorityQueue<MapEntry<String, double>>(compare);
   pq.addAll(labeledProb.entries);
   var result = <Category>[];
-  while (pq.isNotEmpty && result.length < 5 && (pq.first.value > 0.1 || result.length < 3)) {
+  while (pq.isNotEmpty &&
+      result.length < 5 &&
+      (pq.first.value > 0.1 || result.length < 3)) {
     result.add(Category(pq.first.key, pq.first.value));
     pq.removeFirst();
   }

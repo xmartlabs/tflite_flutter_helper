@@ -1,5 +1,5 @@
 import 'package:tflite_flutter/tflite_flutter.dart';
-import 'package:tflite_flutter_processing/src/common/support_preconditions.dart';
+import 'package:tflite_flutter_helper/src/common/support_preconditions.dart';
 
 import 'tensorbuffer.dart';
 

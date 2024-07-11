@@ -16,9 +16,9 @@ typedef struct {
   GObjectClass parent_class;
 } TfliteFlutterHelperPluginClass;
 
-FLUTTER_PLUGIN_EXPORT GType tflite_flutter_processing_plugin_get_type();
+FLUTTER_PLUGIN_EXPORT GType tflite_flutter_helper_plugin_get_type();
 
-FLUTTER_PLUGIN_EXPORT void tflite_flutter_processing_plugin_register_with_registrar(
+FLUTTER_PLUGIN_EXPORT void tflite_flutter_helper_plugin_register_with_registrar(
     FlPluginRegistrar* registrar);
 
 G_END_DECLS

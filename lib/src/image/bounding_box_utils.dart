@@ -2,8 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/rendering.dart';
 import 'package:tflite_flutter/tflite_flutter.dart';
-import 'package:tflite_flutter_processing/src/common/support_preconditions.dart';
-import 'package:tflite_flutter_processing/src/tensorbuffer/tensorbuffer.dart';
+import 'package:tflite_flutter_helper/src/common/support_preconditions.dart';
+import 'package:tflite_flutter_helper/src/tensorbuffer/tensorbuffer.dart';
 
 /// Helper class for converting values that represents bounding boxes into rectangles.
 ///

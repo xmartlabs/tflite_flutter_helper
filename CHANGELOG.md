@@ -1,4 +1,4 @@
-# [0.4.1] - Moved to tflite flutter processor
+# [0.4.0] - Moved to tflite flutter processor
 * Updated all libraries to support updated tflite_flutter package.
 * fixed bug in android preventing build
 

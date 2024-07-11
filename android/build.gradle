@@ -1,8 +1,8 @@
-group 'io.chaosdev.tflite_flutter_processing'
+group 'com.xmartlabs.tflite_flutter_helper'
 version '1.0-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '1.6.10'
+    ext.kotlin_version = '2.0.0'
     repositories {
         google()
         jcenter()

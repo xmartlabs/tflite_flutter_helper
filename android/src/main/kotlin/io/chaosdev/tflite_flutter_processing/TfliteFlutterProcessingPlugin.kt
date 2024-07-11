@@ -1,4 +1,4 @@
-package io.chaosdev.tflite_flutter_processing
+package com.xmartlabs.tflite_flutter_helper
 
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.plugin.common.MethodCall
@@ -37,7 +37,7 @@ enum class SoundStreamStatus {
 	Stopped,
 }
 
-const val METHOD_CHANNEL_NAME = "io.chaosdev.tflite_flutter_processing:methods"
+const val METHOD_CHANNEL_NAME = "com.xmartlabs.tflite_flutter_helper:methods"
 
 /** TfliteFlutterProcessingPlugin */
 class TfliteFlutterProcessingPlugin : FlutterPlugin,

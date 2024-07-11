@@ -1,11 +1,11 @@
-name: tflite_flutter_processing
+name: tflite_flutter_helper
 description: Easy, fast processing and manipulation input and output of TensorFlow Lite Models.
-version: 0.4.1
-homepage: https://www.github.com/lucasoskorep/tflite_flutter_processing
+version: 0.4.0
+homepage: https://www.github.com/xmartlabs/tflite_flutter_helper
 
 environment:
-  sdk: '>=2.18.0 <4.0.0'
-  flutter: ">=2.0.0"
+  sdk: ">=3.0.0 <4.0.0"
+  flutter: ">=3.22.0"
 
 dependencies:
   flutter:
@@ -22,18 +22,17 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-
 flutter:
   plugin:
     platforms:
       android:
-        package: io.chaosdev.tflite_flutter_processing
-        pluginClass: TfliteFlutterProcessingPlugin
+        package: com.xmartlabs.tflite_flutter_helper
+        pluginClass: TfliteFlutterHelperPlugin
       ios:
-        pluginClass: TfliteFlutterProcessingPlugin
+        pluginClass: TfliteFlutterHelperPlugin
       linux:
-        pluginClass: TfliteFlutterProcessingPlugin
+        pluginClass: TfliteFlutterHelperPlugin
       macos:
-        pluginClass: TfliteFlutterProcessingPlugin
+        pluginClass: TfliteFlutterHelperPlugin
       windows:
-        pluginClass: TfliteFlutterProcessingPlugin
+        pluginClass: TfliteFlutterHelperPlugin

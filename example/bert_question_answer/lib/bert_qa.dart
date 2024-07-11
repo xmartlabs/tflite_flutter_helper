@@ -2,14 +2,14 @@ import 'dart:io';
 
 import 'package:flutter/services.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:tflite_flutter_processing/tflite_flutter_processing.dart';
+import 'package:tflite_flutter_helper/tflite_flutter_helper.dart';
 
 class BertQA {
   late final BertQuestionAnswerer bertQuestionAnswerer;
 
   final _modelPath = "lite-model_mobilebert_1_metadata_1.tflite";
 
-  BertQA () {
+  BertQA() {
     createClassifier();
   }
 

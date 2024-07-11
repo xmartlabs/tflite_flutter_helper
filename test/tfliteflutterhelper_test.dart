@@ -5,17 +5,17 @@ import 'dart:typed_data';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:image/image.dart';
 import 'package:tflite_flutter/tflite_flutter.dart';
-import 'package:tflite_flutter_processing/src/common/file_util.dart';
-import 'package:tflite_flutter_processing/src/common/ops/normailze_op.dart';
-import 'package:tflite_flutter_processing/src/common/tensor_processor.dart';
-import 'package:tflite_flutter_processing/src/image/image_processor.dart';
-import 'package:tflite_flutter_processing/src/image/ops/resize_op.dart';
-import 'package:tflite_flutter_processing/src/image/ops/resize_with_crop_or_pad_op.dart';
-import 'package:tflite_flutter_processing/src/image/ops/rot90_op.dart';
-import 'package:tflite_flutter_processing/src/image/tensor_image.dart';
-import 'package:tflite_flutter_processing/src/tensorbuffer/tensorbuffer.dart';
-import 'package:tflite_flutter_processing/src/tensorbuffer/tensorbufferfloat.dart';
-import 'package:tflite_flutter_processing/src/tensorbuffer/tensorbufferuint8.dart';
+import 'package:tflite_flutter_helper/src/common/file_util.dart';
+import 'package:tflite_flutter_helper/src/common/ops/normailze_op.dart';
+import 'package:tflite_flutter_helper/src/common/tensor_processor.dart';
+import 'package:tflite_flutter_helper/src/image/image_processor.dart';
+import 'package:tflite_flutter_helper/src/image/ops/resize_op.dart';
+import 'package:tflite_flutter_helper/src/image/ops/resize_with_crop_or_pad_op.dart';
+import 'package:tflite_flutter_helper/src/image/ops/rot90_op.dart';
+import 'package:tflite_flutter_helper/src/image/tensor_image.dart';
+import 'package:tflite_flutter_helper/src/tensorbuffer/tensorbuffer.dart';
+import 'package:tflite_flutter_helper/src/tensorbuffer/tensorbufferfloat.dart';
+import 'package:tflite_flutter_helper/src/tensorbuffer/tensorbufferuint8.dart';
 
 const int h = 100;
 const int w = 150;
@@ -160,8 +160,8 @@ void main() {
       test('load pixels', () {
         late TensorImage tensorImage = TensorImage();
 
-        tensorImage.loadRgbPixels(
-            image.getBytes(order: ChannelOrder.rgb), [inputHeight, inputWidth, 3]);
+        tensorImage.loadRgbPixels(image.getBytes(order: ChannelOrder.rgb),
+            [inputHeight, inputWidth, 3]);
 
         expect(tensorImage.image.height, inputHeight);
         expect(tensorImage.image.width, inputWidth);

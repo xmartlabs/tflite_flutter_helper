@@ -4,11 +4,11 @@ import 'dart:typed_data';
 import 'package:image/image.dart';
 import 'package:quiver/check.dart';
 import 'package:tflite_flutter/tflite_flutter.dart';
-import 'package:tflite_flutter_processing/src/image/base_image_container.dart';
-import 'package:tflite_flutter_processing/src/image/color_space_type.dart';
-import 'package:tflite_flutter_processing/src/image/image_container.dart';
-import 'package:tflite_flutter_processing/src/image/tensor_buffer_container.dart';
-import 'package:tflite_flutter_processing/src/tensorbuffer/tensorbuffer.dart';
+import 'package:tflite_flutter_helper/src/image/base_image_container.dart';
+import 'package:tflite_flutter_helper/src/image/color_space_type.dart';
+import 'package:tflite_flutter_helper/src/image/image_container.dart';
+import 'package:tflite_flutter_helper/src/image/tensor_buffer_container.dart';
+import 'package:tflite_flutter_helper/src/tensorbuffer/tensorbuffer.dart';
 
 /// [TensorImage] is the wrapper class for [Image] object. When using image processing utils in
 /// Flutter Helper library, it's common to convert image objects in variant types to TensorImage at
@@ -171,7 +171,7 @@ class TensorImage {
   /// It's essentially a short cut for [getTensorBuffer.getBuffer()].
   ///
   /// Throws [StateError] if the TensorImage never loads data.
-  ByteBuffer get buffer {    
+  ByteBuffer get buffer {
     return tensorBuffer.buffer;
   }
 
